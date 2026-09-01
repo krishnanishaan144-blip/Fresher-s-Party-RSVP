@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JRSU Fresher's Party</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background">
+
+        <div class="glow glow1"></div>
+        <div class="glow glow2"></div>
+        <div class="glow glow3"></div>
+
+        <div class="floating f1">🎈</div>
+        <div class="floating f2">🎉</div>
+        <div class="floating f3">🥳</div>
+        <div class="floating f4">🎊</div>
+        <div class="floating f5">✨</div>
+        <div class="floating f6">🎈</div>
+        <div class="floating f7">⭐</div>
+
+    </div>
+
+
+    <!-- MAIN -->
+    <main class="app">
+
+        <div class="card">
+
+            <!-- PROGRESS -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="step-counter" id="stepCounter">
+                Step 1 / 10
+            </div>
+
+
+            <!-- PAGE 1 -->
+            <section class="page active" id="page1">
+
+                <div class="big-icon">🎉</div>
+
+                <div class="university">
+                    JHARKHAND RAKSHA SHAKTI UNIVERSITY
+                </div>
+
+                <h1>
+                    Welcome, Future Legends! ✨
+                </h1>
+
+                <p>
+                    College life is not only about
+                    classes, assignments and attendance.
+                </p>
+
+                <p>
+                    Some moments become memories
+                    that stay with us forever.
+                </p>
+
+                <p>
+                    And guess what?
+                    <span>Fresher's Party is one of them! 🥳</span>
+                </p>
+
+                <button class="main-button" onclick="nextPage()">
+                    Let's Begin 🚀
+                </button>
+
+            </section>
+
+
+            <!-- PAGE 2 -->
+            <section class="page" id="page2">
+
+                <div class="big-icon">👋</div>
+
+                <h2>
+                    First Things First!
+                </h2>
+
+                <p>
+                    Tell us your name.
+                    Don't worry, we won't forget it! 😎
+                </p>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    autocomplete="off"
+                >
+
+                <div class="buttons">
+
+                    <button class="back-button" onclick="previousPage()">
+                        ← Back
+                    </button>
+
+                    <button class="main-button" onclick="nextPage()">
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- PAGE 3 -->
+            <section class="page" id="page3">
+
+                <div class="big-icon">🎓</div>
+
+                <h2>
+                    Your Department
+                </h2>
+
+                <p>
+                    Which department are you representing?
+                </p>
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="Enter your department"
+                    autocomplete="off"
+                >
+
+                <div class="buttons">
+
+                    <button class="back-button" onclick="previousPage()">
+                        ← Back
+                    </button>
+
+                    <button class="main-button" onclick="nextPage()">
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- PAGE 4 -->
+            <section class="page" id="page4">
+
+                <div class="big-icon">📚</div>
+
+                <h2>
+                    Which Semester?
+                </h2>
+
+                <p>
+                    Select your current semester.
+                </p>
+
+                <select id="semester">
+
+                    <option value="">
+                        Select Semester
+                    </option>
+
+                    <option value="1st Semester">
+                        1st Semester
+                    </option>
+
+                    <option value="2nd Semester">
+                        2nd Semester
+                    </option>
+
+                    <option value="3rd Semester">
+                        3rd Semester
+                    </option>
+
+                    <option value="4th Semester">
+                        4th Semester
+                    </option>
+
+                    <option value="5th Semester">
+                        5th Semester
+                    </option>
+
+                    <option value="6th Semester">
+                        6th Semester
+                    </option>
+
+                    <option value="7th Semester">
+                        7th Semester
+                    </option>
+
+                    <option value="8th Semester">
+                        8th Semester
+                    </option>
+
+                </select>
+
+                <div class="buttons">
+
+                    <button class="back-button" onclick="previousPage()">
+                        ← Back
+                    </button>
+
+                    <button class="main-button" onclick="nextPage()">
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- PAGE 5 -->
+            <section class="page" id="page5">
+
+                <div class="big-icon">🥳</div>
+
+                <h2>
+                    One Important Question!
+                </h2>
+
+                <p>
+                    Are you coming to the
+                    <span>Fresher's Party?</span> 👀
+                </p>
+
+                <div class="question-area" id="questionArea">
+
+                    <button
+                        class="choice yes"
+                        id="yesButton"
+                        onclick="yesClicked()"
+                    >
+
+                        <strong>😍</strong>
+
+                        <b>YES!</b>
+
+                    </button>
+
+
+                    <button
+                        class="choice no"
+                        id="noButton"
+                        onclick="noClicked(event)"
+                    >
+
+                        <strong>🥲</strong>
+
+                        <b>NO</b>
+
+                    </button>
+
+                </div>
+
+                <div class="run-message" id="runMessage"></div>
+
+                <p class="small-text">
+                    Choose wisely... 😏
+                </p>
+
+            </section>
+
+
+            <!-- PAGE 6 -->
+            <section class="page" id="page6">
+
+                <div class="big-icon sad">
+                    😢
+                </div>
+
+                <h2>
+                    Aww... We'll Miss You!
+                </h2>
+
+                <p>
+                    You really can't make it? 🥺
+                </p>
+
+                <p>
+                    That's okay.
+                    But please tell us your
+                    <span>genuine reason.</span>
+                </p>
+
+                <textarea
+                    id="reason"
+                    placeholder="Please tell us your genuine reason..."
+                ></textarea>
+
+                <div class="buttons">
+
+                    <button
+                        class="back-button"
+                        onclick="backToQuestion()"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        class="main-button"
+                        onclick="submitNo()"
+                    >
+                        Submit
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- PAGE 7 -->
+            <section class="page" id="page7">
+
+                <div class="big-icon">🎊</div>
+
+                <div class="university">
+                    JHARKHAND RAKSHA SHAKTI UNIVERSITY
+                </div>
+
+                <h2>
+                    You're Officially Invited! 🥳
+                </h2>
+
+                <p>
+                    Get ready for an unforgettable day
+                    full of fun, friends and memories! ✨
+                </p>
+
+
+                <div class="event-card">
+
+                    <!-- VENUE -->
+                    <div class="event-row">
+
+                        <div class="event-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <b>Venue</b>
+
+                            <br>
+
+                            <span>
+                                JRSU Auditorium
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TIME -->
+                    <div class="event-row">
+
+                        <div class="event-icon">
+                            ⏰
+                        </div>
+
+                        <div>
+
+                            <b>Time</b>
+
+                            <br>
+
+                            <span>
+                                10:00 AM – 5:00 PM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATE -->
+                    <div class="event-row">
+
+                        <div class="event-icon">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <b>Date</b>
+
+                            <br>
+
+                            <span
+                                class="date-link"
+                                onclick="showDatePopup()"
+                            >
+                                👀 Click to check the date
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-preview">
+
+                    Welcome,
+
+                    <strong id="previewName">
+                        Student
+                    </strong>
+
+                    ! 🎉
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button
+                        class="main-button"
+                        onclick="goToConfirmation()"
+                    >
+                        Continue to Registration →
+                    </button>
+
+                </div>
+
+
+                <p class="small-text">
+                    Dress up. Show up.
+                    Make memories. ✨
+                </p>
+
+            </section>
+
+
+            <!-- PAGE 8 -->
+            <section class="page" id="page8">
+
+                <div class="big-icon">
+                    🎟️
+                </div>
+
+                <h2>
+                    Almost Done! 🥳
+                </h2>
+
+                <p>
+
+                    Hey
+                    <strong id="confirmName">
+                        Student
+                    </strong>!
+
+                    <br><br>
+
+                    Please check your details
+                    before confirming.
+
+                </p>
+
+
+                <div class="confirmation-card">
+
+                    <div class="confirm-row">
+
+                        <span>👤 Name</span>
+
+                        <strong id="confirmName2">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirm-row">
+
+                        <span>🎓 Department</span>
+
+                        <strong id="confirmDepartment">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirm-row">
+
+                        <span>📚 Semester</span>
+
+                        <strong id="confirmSemester">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirm-row">
+
+                        <span>📍 Venue</span>
+
+                        <strong>
+                            JRSU Auditorium
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirm-row">
+
+                        <span>⏰ Time</span>
+
+                        <strong>
+                            10 AM – 5 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirm-row">
+
+                        <span>📅 Date</span>
+
+                        <strong>
+                            To Be Announced
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button
+                        class="back-button"
+                        onclick="previousPage()"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        class="main-button"
+                        onclick="confirmRegistration()"
+                    >
+                        Confirm Registration 🎉
+                    </button>
+
+                </div>
+
+
+                <p class="small-text">
+
+                    No payment required.
+                    Just bring your excitement! 😎
+
+                </p>
+
+            </section>
+
+
+            <!-- PAGE 9 -->
+            <section class="page" id="page9">
+
+                <div class="success-icon">
+                    🎉
+                </div>
+
+                <h1>
+                    Registration Successful!
+                </h1>
+
+                <p>
+
+                    Your response has been
+                    successfully submitted.
+
+                    <br><br>
+
+                    Your Fresher's token is ready!
+
+                </p>
+
+                <button
+                    class="main-button"
+                    onclick="generateToken()"
+                >
+                    Generate My Token 🎟️
+                </button>
+
+            </section>
+
+
+            <!-- PAGE 10 -->
+            <section class="page" id="page10">
+
+                <div class="big-icon">
+                    🎟️
+                </div>
+
+                <div class="university">
+                    JHARKHAND RAKSHA SHAKTI UNIVERSITY
+                </div>
+
+                <h2>
+                    Your Fresher's Token
+                </h2>
+
+                <p>
+                    Keep this token safe.
+                </p>
+
+
+                <div class="token-card">
+
+                    <div class="token-label">
+                        FRESHER'S PARTY • ENTRY TOKEN
+                    </div>
+
+
+                    <div
+                        class="token"
+                        id="tokenDisplay"
+                    >
+                        JRSU-XXXX-XXXXXXXX
+                    </div>
+
+
+                    <div class="token-info">
+
+                        <strong id="tokenName">
+                            Student
+                        </strong>
+
+                        <br>
+
+                        <span id="tokenDepartment">
+                            Department
+                        </span>
+
+                        <br>
+
+                        <span id="tokenSemester">
+                            Semester
+                        </span>
+
+                        <br><br>
+
+                        Department Code:
+
+                        <strong id="tokenDepartmentCode">
+                            ---
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="copy-button"
+                        onclick="copyToken()"
+                    >
+                        📋 Copy Token
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="small-text"
+                    id="copyMessage"
+                >
+                    See you at the party! 🥳
+                </p>
+
+
+                <div class="buttons">
+
+                    <button
+                        class="back-button"
+                        onclick="restartForm()"
+                    >
+                        🔄 Start Again
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ADMIN LOGIN BUTTON -->
+
+    <div class="admin-access">
+
+        <button
+            type="button"
+            class="admin-login-link"
+            onclick="openAdminLogin()"
+        >
+            🔐 Admin Login
+        </button>
+
+    </div>
+
+
+    <!-- DATE POPUP -->
+
+    <div
+        class="popup"
+        id="datePopup"
+    >
+
+        <div class="popup-box">
+
+            <div class="popup-icon">
+                🤫
+            </div>
+
+            <h3>
+                Ohooo! Curious? 👀
+            </h3>
+
+            <p>
+
+                <strong>
+                    Date will be announced shortly!
+                </strong>
+
+                <br><br>
+
+                Thoda suspense bhi toh zaroori hai...
+
+                <br>
+
+                warna surprise kaise rahega? 😎🎉
+
+            </p>
+
+            <button
+                class="main-button"
+                onclick="closeDatePopup()"
+            >
+                Okay 😎
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN LOGIN POPUP -->
+
+    <div
+        class="popup"
+        id="adminLoginPopup"
+    >
+
+        <div class="popup-box admin-popup">
+
+            <div class="popup-icon">
+                🔐
+            </div>
+
+            <h3>
+                Admin Login
+            </h3>
+
+            <p>
+                Authorized personnel only.
+            </p>
+
+
+            <input
+                type="text"
+                id="adminId"
+                placeholder="Admin ID"
+                autocomplete="username"
+            >
+
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Password"
+                autocomplete="current-password"
+            >
+
+
+            <div
+                id="adminLoginMessage"
+                class="admin-login-message"
+            ></div>
+
+
+            <button
+                class="main-button"
+                onclick="adminLogin()"
+            >
+                Login →
+            </button>
+
+
+            <button
+                class="popup-close-button"
+                onclick="closeAdminLogin()"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

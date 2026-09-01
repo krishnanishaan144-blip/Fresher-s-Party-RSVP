@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        JRSU Fresher's Party 2026 - Admin
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="admin-background">
+
+        <div class="admin-glow glow-one"></div>
+
+        <div class="admin-glow glow-two"></div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         LOGIN PAGE
+    =================================================== -->
+
+    <section
+        id="adminLoginPage"
+        class="admin-login-page"
+    >
+
+        <div class="login-card">
+
+            <div class="login-icon">
+                🔐
+            </div>
+
+
+            <div class="university">
+                JHARKHAND RAKSHA SHAKTI UNIVERSITY
+            </div>
+
+
+            <h1>
+                Admin Login
+            </h1>
+
+
+            <p>
+                Fresher's Party 2026
+            </p>
+
+
+            <!-- ADMIN NAME -->
+
+            <div class="input-group">
+
+                <label for="adminName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="adminName"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                >
+
+            </div>
+
+
+            <!-- ADMIN ID -->
+
+            <div class="input-group">
+
+                <label for="loginId">
+                    Admin ID
+                </label>
+
+                <input
+                    type="text"
+                    id="loginId"
+                    placeholder="Enter Admin ID"
+                    autocomplete="username"
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter Password"
+                    autocomplete="current-password"
+                >
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="loginError"
+                class="login-error"
+            ></div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                type="button"
+                class="login-button"
+                onclick="adminLogin()"
+            >
+
+                🔓 Login to Dashboard
+
+            </button>
+
+
+            <button
+                type="button"
+                class="back-home"
+                onclick="goHome()"
+            >
+
+                ← Back to Fresher Form
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         DASHBOARD
+    =================================================== -->
+
+    <main
+        id="dashboard"
+        class="dashboard"
+    >
+
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+
+            <div class="header-left">
+
+                <div class="university">
+                    JHARKHAND RAKSHA SHAKTI UNIVERSITY
+                </div>
+
+
+                <h1>
+                    🎉 Fresher's Party Dashboard
+                </h1>
+
+
+                <p>
+                    Registration Management & Transparency Panel
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div
+                    id="loggedInAdminName"
+                    class="logged-in-admin"
+                >
+                    👤 Admin
+                </div>
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    onclick="logout()"
+                >
+
+                    🔒 Logout
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- EVENT DETAILS -->
+
+        <section class="event-information">
+
+
+            <div class="event-info">
+
+                <span>
+                    🏫 Venue
+                </span>
+
+                <strong>
+                    JRSU Auditorium
+                </strong>
+
+            </div>
+
+
+            <div class="event-info">
+
+                <span>
+                    ⏰ Time
+                </span>
+
+                <strong>
+                    10 AM – 5 PM
+                </strong>
+
+            </div>
+
+
+            <div class="event-info">
+
+                <span>
+                    📅 Date
+                </span>
+
+                <strong>
+                    To Be Announced
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- STATISTICS -->
+
+        <section class="statistics">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Registrations
+                    </span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card yes-stat">
+
+                <div class="stat-icon">
+                    🎉
+                </div>
+
+                <div>
+
+                    <span>
+                        Coming
+                    </span>
+
+                    <strong id="yesCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card no-stat">
+
+                <div class="stat-icon">
+                    😢
+                </div>
+
+                <div>
+
+                    <span>
+                        Not Coming
+                    </span>
+
+                    <strong id="noCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- REGISTRATION ACTION BAR -->
+
+        <section class="action-bar">
+
+
+            <div>
+
+                <h2>
+                    📋 Registration Records
+                </h2>
+
+                <span id="lastUpdated">
+                    Not loaded
+                </span>
+
+            </div>
+
+
+            <div class="action-buttons">
+
+
+                <button
+                    type="button"
+                    class="action-button"
+                    onclick="loadRegistrations()"
+                >
+                    🔄 Refresh
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-button pdf"
+                    onclick="downloadAllPDF()"
+                >
+                    📄 All PDF
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-button yes-pdf"
+                    onclick="downloadYesPDF()"
+                >
+                    🎉 Yes PDF
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-button no-pdf"
+                    onclick="downloadNoPDF()"
+                >
+                    😢 No PDF
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FILTER -->
+
+        <section class="filter-area">
+
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="🔎 Search name, department or token..."
+                oninput="filterTable()"
+            >
+
+
+            <select
+                id="attendanceFilter"
+                onchange="filterTable()"
+            >
+
+                <option value="all">
+                    All Responses
+                </option>
+
+                <option value="Yes">
+                    Yes - Coming
+                </option>
+
+                <option value="No">
+                    No - Not Coming
+                </option>
+
+            </select>
+
+
+            <select
+                id="departmentFilter"
+                onchange="filterTable()"
+            >
+
+                <option value="all">
+                    All Departments
+                </option>
+
+            </select>
+
+        </section>
+
+
+
+        <!-- REGISTRATION TABLE -->
+
+        <section class="table-container">
+
+
+            <table>
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            S.No.
+                        </th>
+
+                        <th>
+                            Submission Time
+                        </th>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Department
+                        </th>
+
+                        <th>
+                            Code
+                        </th>
+
+                        <th>
+                            Semester
+                        </th>
+
+                        <th>
+                            Coming
+                        </th>
+
+                        <th>
+                            Reason
+                        </th>
+
+                        <th>
+                            Token
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="registrationTable"
+                >
+
+                    <tr>
+
+                        <td
+                            colspan="10"
+                            class="empty-table"
+                        >
+
+                            Login and load registrations...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ADMIN ACTIVITY
+        =================================================== -->
+
+        <section class="activity-section">
+
+
+            <div class="activity-header">
+
+                <div>
+
+                    <h2>
+                        🔐 Admin Activity Log
+                    </h2>
+
+                    <p>
+                        Transparency record — login, access,
+                        search, PDF and deletion activities.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="activity-refresh"
+                    onclick="loadActivityLogs()"
+                >
+
+                    🔄 Refresh Log
+
+                </button>
+
+            </div>
+
+
+
+            <div class="activity-warning">
+
+                🔒 Activity logs cannot be deleted from
+                this dashboard.
+
+            </div>
+
+
+
+            <div class="table-container activity-table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Admin Name
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Token
+                            </th>
+
+                            <th>
+                                Description
+                            </th>
+
+                            <th>
+                                Admin ID
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="activityLogTable"
+                    >
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="empty-table"
+                            >
+
+                                No activity loaded.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                JRSU Fresher's Party 2026
+            </span>
+
+
+            <span>
+                🔐 Transparent Admin System
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
